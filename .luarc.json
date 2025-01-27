@@ -1,0 +1,10 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "lvim",
+        "reload",
+        "validate_table",
+        "setup_lsp",
+        "formatted_cmd"
+    ]
+}
