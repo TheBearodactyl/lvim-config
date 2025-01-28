@@ -30,7 +30,9 @@ function M.setup()
     { "rayliwell/tree-sitter-rstml", dependencies = { "nvim-treesitter" }, build = ":TSUpdate", opts = {} },
     { "rayliwell/nvim-ts-autotag", opts = {} },
     { "nvim-pack/nvim-spectre", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
-    { "sidebar-nvim/sidebar.nvim" }
+    { "sidebar-nvim/sidebar.nvim" },
+    { "p00f/clangd_extensions.nvim" },
+    { "tzachar/cmp-tabnine", build = "pwsh.exe ./install.ps1", dependencies = "hrsh7th/nvim-cmp", event = "InsertEnter" },
 	}
 end
 

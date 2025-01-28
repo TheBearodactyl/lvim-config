@@ -8,7 +8,7 @@ function M.setup()
       },
       window = {
         border = "rounded",
-        align = "top",
+        align = "bottom",
       },
     },
   }
