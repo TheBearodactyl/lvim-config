@@ -50,12 +50,11 @@ function M.setup()
     filetypes = { "rs", "rust" },
   })
 
-  -- lvim.lsp.on_attach_callback = function(client, bufnr)
-  --   require("lsp_signature").on_attach()
-  -- end
+  lvim.lsp.on_attach_callback = function(_, _)
+    require("lsp_signature").on_attach()
+  end
 
   vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
-  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rustfmt" })
 end
 
 return M
