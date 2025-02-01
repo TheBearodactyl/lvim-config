@@ -19,18 +19,17 @@ function M.setup()
   local spectre_nmappings = {
     name = "[n] Spectre",
     w = { "<cmd>lua require'spectre'.toggle()<cr>", "Toggle Spectre" },
-    p = { "<cmd>lua require'spectre'.open_file_search({select_word=true})<cr>", "Search current file" }
+    p = { "<cmd>lua require'spectre'.open_file_search({select_word=true})<cr>", "Search current file" },
   }
 
   local spectre_vmappings = {
     name = "[v] Spectre",
-    w = { "<cmd>lua require'spectre'.open_visual()<cr>", "Search current word" }
+    w = { "<cmd>lua require'spectre'.open_visual()<cr>", "Search current word" },
   }
 
   local sidebar_mappings = {
     name = "Sidebar",
     t = { "<cmd>SidebarNvimToggle<cr>", "Toggle the sidebar" },
-    u = { "", "" }
   }
 
   -- Diagnostics keybindings
@@ -42,6 +41,11 @@ function M.setup()
     q = { "<cmd>Trouble quickfix<cr>", "Quickfix" },
     l = { "<cmd>Trouble loclist<cr>", "Loclist" },
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  }
+
+  lvim.builtin.which_key.mappings["lh"] = {
+    "<cmd>lua require'pretty_hover'.hover()<cr>",
+    "Hover",
   }
 
   -- Rust keybinds

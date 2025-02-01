@@ -7,11 +7,15 @@ local M = {}
 -- @param deep (boolean) [optional] Whether to search nested tables (default: false)
 -- @return (boolean) True if value is found, false otherwise
 function M.contains_value(tbl, val, deep)
-  if type(tbl) ~= "table" then return false end
+  if type(tbl) ~= "table" then
+    return false
+  end
 
   local visited = {}
   local function search(t)
-    if visited[t] then return false end
+    if visited[t] then
+      return false
+    end
 
     visited[t] = true
 

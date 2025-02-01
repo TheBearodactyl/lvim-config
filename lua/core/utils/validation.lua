@@ -29,7 +29,7 @@ function M.validate_table(required_data, given_data, optional_fields, strict)
 
     if type(expected_value) ~= type(given_value) then
       return false,
-          "field '"
+        "field '"
           .. key
           .. "' has incorrect type (expected "
           .. type(expected_value)

@@ -1,9 +1,9 @@
 local M = {}
 
 function M.setup()
-  local sidebar = require("sidebar-nvim")
+  local sidebar = require "sidebar-nvim"
   local opts = {
-    open = true
+    open = true,
   }
 
   sidebar.setup(opts)

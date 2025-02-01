@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  return {
+  require("fidget").setup {
     notification = {
       view = {
         stack_upwards = false,

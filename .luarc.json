@@ -5,6 +5,7 @@
         "reload",
         "validate_table",
         "setup_lsp",
-        "formatted_cmd"
+        "formatted_cmd",
+        "c_base"
     ]
 }

@@ -1,9 +1,9 @@
 local M = {}
 
 function M.setup()
-  local lsp_manager = require("lvim.lsp.manager")
-  local formatters = require("lvim.lsp.null-ls.formatters")
-  local linters = require("lvim.lsp.null-ls.linters")
+  local lsp_manager = require "lvim.lsp.manager"
+  local formatters = require "lvim.lsp.null-ls.formatters"
+  local linters = require "lvim.lsp.null-ls.linters"
 
   local function setup_lsp(lsp_name, lsp_config, verbose)
     lsp_manager.setup(lsp_name, lsp_config)
@@ -36,19 +36,19 @@ function M.setup()
   }, false)
 
   -- Linter configurations
-  setup_linter({
+  setup_linter {
     name = "taplo",
     command = "taplo",
     args = { "--" },
     filetypes = { "toml" },
-  })
+  }
 
   -- Formatter configurations
-  setup_formatter({
+  setup_formatter {
     name = "leptosfmt",
     command = "leptosfmt",
     filetypes = { "rs", "rust" },
-  })
+  }
 
   lvim.lsp.on_attach_callback = function(_, _)
     require("lsp_signature").on_attach()

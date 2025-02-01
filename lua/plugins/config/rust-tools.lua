@@ -1,19 +1,19 @@
 local M = {}
 
 function M.setup()
-  local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
+  local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
   local codelldb_path = mason_path .. "bin/codelldb"
   local liblldb_path = mason_path .. "packages/codelldb/extension/lldb/lib/liblldb"
   local this_os = vim.loop.os_uname().sysname
 
-  if this_os:find("Windows") then
+  if this_os:find "Windows" then
     codelldb_path = mason_path .. "packages\\codelldb\\extension\\adapter\\codelldb.exe"
     liblldb_path = mason_path .. "packages\\codelldb\\extension\\lldb\\bin\\liblldb.dll"
   else
     liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
   end
 
-  local cfg = require("rustaceanvim.config")
+  local cfg = require "rustaceanvim.config"
 
   vim.g.rustaceanvim = function()
     return {
@@ -43,7 +43,7 @@ function M.setup()
       server = {
         on_attach = function(client, bufnr)
           require("lvim.lsp").common_on_attach(client, bufnr)
-          local rt = require("rustaceanvim.hover_actions")
+          local rt = require "rustaceanvim.hover_actions"
           vim.keymap.set("n", "K", rt.hover_actions, { buffer = bufnr })
         end,
         capabilities = require("lvim.lsp").common_capabilities(),
